@@ -12,11 +12,13 @@ class PostController extends Controller
 {
     function index()
     {
-    	$posts = Post::orderBy('created_at', 'desc')->get();
+    	$posts = Post::where('deleted', false)
+	    	->orderBy('created_at', 'desc')
+	    	->get();
+	    	
     	return view('post.index', [
     		'posts' => $posts
     	]);
     }
-
 
 }
