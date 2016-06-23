@@ -15,10 +15,15 @@ class PostController extends Controller
     	$posts = Post::where('deleted', false)
 	    	->orderBy('created_at', 'desc')
 	    	->get();
-	    	
+
     	return view('post.index', [
     		'posts' => $posts
     	]);
+    }
+
+    function create()
+    {
+    	return view('post.create');
     }
 
 }

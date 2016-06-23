@@ -15,5 +15,6 @@
             </li>
         @endforeach
     </ul>
+    <a href="{{ url('posts/create') }}">글쓰기</a>
 
 @endsection
